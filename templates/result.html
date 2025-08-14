@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathoScan - Result</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .navigation {
+            margin-top: 40px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            margin-right: 20px;
+            padding: 15px 30px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navigation a:last-child {
+            margin-right: 0;
+        }
+
+        .navigation a:hover {
+            background-color: #0056b3;
+        }
+
+        .footer {
+            margin-top: 50px;
+            color: #999;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .disclaimer {
+            color: #999;
+            font-size: 16px;
+            margin-top: 30px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PathoScan Result</h1>
+        <p>Uploaded Image: {{ filename }}</p>
+        <img src="{{ url_for('static', filename=filename) }}" alt="Uploaded Image">
+        <p>Predicted Class Index: {{ predicted_class_index }}</p>
+        <p>Probability: {{ probability }}</p>
+        <div class="navigation">
+            <a href="/">Upload Another Image</a>
+            <a href="index.html">Home</a>
+        </div>
+        <p class="disclaimer">*Class 0 : Blast</p>
+        <p class="disclaimer">*Class 1 : Rust</p>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 PathoScan. All rights reserved.</p>
+    </footer>
+</body>
+</html>

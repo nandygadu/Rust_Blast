@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PathoScan - Intelligent Diagnostics</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .nav {
+      background-color: #333;
+      color: #fff;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+      margin: 0 15px;
+      transition: color 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: #007bff;
+    }
+
+    .container {
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      margin-top: 80px;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .upload-box {
+      display: flex; /* Arrange elements horizontally */
+      justify-content: center; /* Center elements horizontally */
+      align-items: center; /* Center elements vertically */
+      margin: 0 auto; /* Center box horizontally */
+      width: 50%; /* Set width for responsiveness */
+    }
+
+    input[type="file"] {
+      margin-bottom: 20px;
+      padding: 15px 30px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      width: 100%;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+
+    input[type="file"]:hover {
+      border-color: #999;
+    }
+
+    input[type="file"]::placeholder {
+      color: #999;
+    }
+
+    input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 15px 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .fa-upload {
+      margin-right: 10px;
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav">
+    <a href="https://www.youtube.com/">Home</a>
+    <a href="#">Events</a>
+    <a href="#">Status</a>
+    <a href="#" id="new">Login/Signup</a>
+  </div>
+
+  <div class="container">
+    <h1>Select any image to check for BLAST or RUST<i class="fas fa-upload"></i></h1>
+    <div class="upload-box">
+      <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" placeholder="Select an image">
+        <br>
+        <input type="submit" value="Upload">
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
